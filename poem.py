@@ -13,7 +13,7 @@ class Poem:
         return text
 
     def get_tweet(self):
-        return f"\"{self.get_poem()['text'][1:121]}...\" -- Read the featured poem \"{self.get_poem()['title']}\", by {self.get_poem()['author'].upper()}: {self.link}"
+        return f"\"{self.get_poem()['text'][1:121]}...\" -- Lisez ma choix de poème du jour \"{self.get_poem()['title']}\", de {self.get_poem()['author'].upper()}: {self.link}"
 
 
 
