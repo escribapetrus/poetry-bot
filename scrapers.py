@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup as soup
 import requests
 
 BASE_URL = "BASE URL" # USE CORRECT URL
+flatten = lambda l: [item for sublist in l for item in sublist]
 
 def get_authors(lis):
 	jackie = map(lambda x: x.string, lis)
@@ -37,5 +38,5 @@ def scrape_site():
 	urls = get_urls(author_list)
 	library = list(zip(authors,urls))[:-1]
 	all_authors = list(map(lambda x: {'author':x[0],'poems': get_poem_list(x[1])},library))
-	return all_authors
+	return flatten(all_authors)
 

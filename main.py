@@ -1,17 +1,14 @@
-from csvwriter import read_csv, write_csv
-from scrapers import folha_horoscope, metropole_horoscopes 
-flatten = lambda l: [item for sublist in l for item in sublist]
+import pandas as pd
 
-pkmn = [
-    [{'num': 1,'name':'bulbasaur'},
-    {'num': 2,'name':'venusaur'},
-    {'num': 3,'name':'ivysaur'}],
-    [{'num': 4,'name':'charmander'},
-    {'num': 5,'name':'charmeleon'},
-    {'num': 6,'name':'charizard'}],
-    [{'num':7,'name':'squirtle'},
-    {'num':8,'name':'wartortle'},
-    {'num':9,'name':'blastoise'}]
-]
+from csv_manage import read_csv, write_csv
+from poem import Poem
+from tweeter import api as tweeter
 
-write_csv("horoscopes.csv",'w',flatten(metropole_horoscopes()))
+df = pd.read_csv('poem_list.csv')
+(author,title,link) = tuple(df.sample(1).iloc[0])
+
+poem = Poem(author,title,link)
+tweet = poem.get_tweet()
+
+tweeter.update_status(tweet)
+

@@ -1,6 +1,4 @@
-import random
 import csv
-
 
 def read_csv(file):
     csv_file = open(file)

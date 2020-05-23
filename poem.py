@@ -1,7 +1,5 @@
-from csvwriter import read_csv
 from scrapers import get_poem_detail
 import pandas as pd
-import random
 import requests
 
 class Poem:
@@ -15,10 +13,7 @@ class Poem:
         return text
 
     def get_tweet(self):
-        return f"\"{self.get_poem()['text'][1:101]}...\" -- Read the featured poem \"{self.get_poem()['title']}\", by {self.get_poem()['author']}"
+        return f"\"{self.get_poem()['text'][1:121]}...\" -- Read the featured poem \"{self.get_poem()['title']}\", by {self.get_poem()['author'].upper()}: {self.link}"
 
-df = pd.read_csv('FILENAME.csv')
-(author,title,link) = tuple(df.sample(1).iloc[0])
 
-auth = Poem(author,title,link)
 

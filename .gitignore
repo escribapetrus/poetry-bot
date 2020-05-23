@@ -1,4 +1,7 @@
 __pycache__/
 env/
+env2/
 poem_list.csv
 trash/
+
+secrets.py
