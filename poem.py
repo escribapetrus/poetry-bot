@@ -1,6 +1,4 @@
 from scrapers import get_poem_detail
-import pandas as pd
-import requests
 
 class Poem:
     def __init__(self,author,title,link):
