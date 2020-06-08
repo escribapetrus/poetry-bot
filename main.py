@@ -9,6 +9,6 @@ df = pd.read_csv('poem_list.csv')
 
 poem = Poem(author,title,link)
 tweet = poem.get_tweet()
-
 tweeter.update_status(tweet)
+print("Twitter update\n{}".format(tweet))
 
