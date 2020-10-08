@@ -14,7 +14,6 @@ class Poem:
         return text
 
     def get_tweet(self):
-        return f"\"{self.get_poem()['text'][1:121]}...\" -- Lisez ma choix de poème du jour \"{self.get_poem()['title']}\", de {self.get_poem()['author'].upper()}: {self.link}"
-
+        return "\"{a}...\" -- Lisez ma choix de poème du jour \"{b}\", de {c}: {d}".format(a=self.get_poem()['text'][1:121],b=self.get_poem()['title'], c=self.get_poem()['author'].upper(), d=self.link)
 
 
