@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from scrapers import get_poem_detail
 
 class Poem:
